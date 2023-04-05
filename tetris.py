@@ -1,7 +1,6 @@
 import pygame
 import background
 from board import Board
-from client import TetrisClient
 from constants import *
 from game_over import game_over_screen
 from piece import generate_piece
@@ -20,10 +19,6 @@ def main():
     piece_fall_counter = 0  # Teller for å bestemme når brikken skal falle nedover
     game_over = False
     score = 0
-    client = TetrisClient('127.0.0.1', 12345)
-    client.connect()
-    message = {'action': 'start_game'}
-    client.send_message(message)
 
     """Hovedspill-løkken."""
     while not game_over:
